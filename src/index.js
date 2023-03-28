@@ -1,7 +1,7 @@
 import { fetchCountries } from '../fetchCountries';
 import './css/styles.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { debounce } from 'lodash/debounce';
+import { debounce } from 'lodash';
 
 const DEBOUNCE_DELAY = 300;
 const inputCountry = document.querySelector('#search-box');
