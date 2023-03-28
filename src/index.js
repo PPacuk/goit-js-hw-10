@@ -39,16 +39,12 @@ const renderCountriesList = countries => {
 };
 
 const inputHandler = countryName => {
-  fetchCountries(countryName.currentTarget.value)
+  fetchCountries(inputCountry.value)
     .then(countries => renderCountriesList(countries))
     .catch(error => console.log(error));
 };
 
-inputCountry.addEventListener('input', inputHandler);
+const debouncedInputHandler = _.debounce(inputHandler, DEBOUNCE_DELAY)
 
-const test = () => {
-  console.log('hello')
-}
+inputCountry.addEventListener('input', debouncedInputHandler);
 
-const debounced = _.debounce(test, 5000)
-console.log(debounced())
