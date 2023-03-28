@@ -8,13 +8,11 @@ const inputCountry = document.querySelector('#search-box');
 const countryList = document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info');
 
-const renderCountriesList = countries => { 
-  if (countries.length < 10 && countries.length !==1) {
+const renderCountriesList = countries => {
+  if (countries.length <= 10 && countries.length !== 1) {
     const markup = countries
       .map(country => {
-        return `<li><img src='${
-          country.flags.svg
-        }', height="20px", border='1px'> ${country.name.official}</li>`;
+        return `<li><img src='${country.flags.svg}', height="20px", border='1px'> ${country.name.official}</li>`;
       })
       .join('');
     countryInfo.innerHTML = markup;
@@ -33,12 +31,10 @@ const renderCountriesList = countries => {
     countryInfo.innerHTML = '';
     countryList.innerHTML = markupList;
   } else {
-return Notify.info(
+    return Notify.info(
       'Too many matches found. Please enter a more specific name.'
     );
   }
-
-  
 };
 
 const inputHandler = countryName => {
