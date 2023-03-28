@@ -3,6 +3,7 @@ import './css/styles.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { debounce } from 'lodash/debounce';
 
+const _ = require('lodash')
 const DEBOUNCE_DELAY = 300;
 const inputCountry = document.querySelector('#search-box');
 const countryList = document.querySelector('.country-list');
@@ -45,9 +46,9 @@ const inputHandler = countryName => {
 
 inputCountry.addEventListener('input', inputHandler);
 
-// const test = () => {
-//   console.log('hello')
-// }
+const test = () => {
+  console.log('hello')
+}
 
-// const debounced = _.debounce(test, 5000)
-// console.log(debounced())
+const debounced = _.debounce(test, 5000)
+console.log(debounced())
