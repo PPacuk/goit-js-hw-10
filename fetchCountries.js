@@ -2,6 +2,7 @@ export { fetchCountries };
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const countryInfo = document.querySelector('.country-info');
+const inputCountry = document.querySelector('#search-box');
 
 const fetchCountries = name => {
   return fetch(
